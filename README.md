@@ -1,7 +1,7 @@
 # homepage
 My very own personal website. Basically this is just a résumé.
 
-Formatting your README
+Formatting your README.
 
 READMEs generally follow one format in order to immediately orient developers to the most important aspects of your project.
 
