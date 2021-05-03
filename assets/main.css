@@ -1,41 +1,88 @@
 .modal-overlay, .modal-overlay {
     opacity: 0;
 }
+
 .vmodal.open .modal-overlay,
 .vmodal.open .modal_window {
     opacity: 1;
     z-index: 5;
 }
-.main-avatar {
-    background-image:url("foto/Ryu3.jpg");
-    height: 100%;
-    background-position:center;
-    background-repeat:no-repeat;
+
+.vmodal.hide .modal-overlay,
+.vmodal.hide .modal_window {
+    opacity: 1;
+    z-index: 5;
 }
+
+.vmodal.open .modal_window {
+    transform: translateY(0px);
+}
+
+.vmodal.hide .modal-overlay {
+    background: rgba(0, 0, 0, 0);
+}
+
+.vmodal.hide .modal_window {
+    transform: translateY(-300px);
+}
+
+.vmodal.open .modal-overlay {
+    background: rgba(0, 0, 0, .5);
+}
+
+.main-avatar {
+    background-image: url("foto/Ryu3.jpg");
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.main-avatar:hover {
+    cursor: pointer;
+}
+
 .modal-overlay {
     position: fixed;
     top: 0;
     right: 0;
     left: 0;
     bottom: 0;
-    background: rgba(0,0,0, 0.5);
-/*    z-index: 5;*/
+    background: rgba(0, 0, 0, 0);
+    transition: background .2s ease-in;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .modal_window {
-    width: 600px;
+    display: flex;
+    width: fit-content;
     border-radius: 5px;
-    background: wheat;
-    height: 200px;
+    height: fit-content;
+    background-color: white;
+    transform: translateY(-300px);
+    transition: transform .2s ease-in;
 }
-.modal-close {
-    float: right;
-    font-size: 35px;
-    border: 1px solid;
+
+.img-wrapper {
     display: flex;
     justify-content: center;
-    align-items: baseline;
+    align-items: center;
+    height: 90vh;
+}
+
+.img-wrapper img {
+    max-height: 100%;
+}
+
+.left-btn-wrapper button, .right-btn-wrapper button {
+    height: 100%;
+    font-size: 30px;
+    padding: 15px;
+    border-radius: 0;
+}
+
+.left-btn-wrapper button:hover, .right-btn-wrapper button:hover {
     cursor: pointer;
 }
