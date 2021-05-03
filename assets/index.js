@@ -16,15 +16,14 @@ function createModal() {
     arrayOfImgSrc.push("assets/foto/SliderFotos/foto12.jpg")
     arrayOfImgSrc.push("assets/foto/SliderFotos/foto13.jpg")
     arrayOfImgSrc.push("assets/foto/SliderFotos/foto14.jpg")
-    console.log(arrayOfImgSrc)
     modal.insertAdjacentHTML("afterbegin", `
  <div class="modal-overlay" data-close="true">
-  <div class="modal_window" data-close="true">
+  <div class="modal_window">
     <div class="left-btn-wrapper">
         <button id="prev-img"> < </button>
     </div>
     <div class="img-wrapper">
-  <img src="" alt="Ryu" id="slider-img">
+  <img src="" alt="Ryu" id="slider-img" data-close="true">
   </div>
     <div class="right-btn-wrapper">
         <button id="next-img"> > </button>
@@ -69,8 +68,10 @@ const modalActions = function () {
     const openAndCloseModal = {
         open() {
             !closing && modal.classList.add("open")
+            document.body.style.overflowY='hidden'
         },
         close() {
+            document.body.style.overflowY='visible'
             closing = true
             modal.classList.remove("open")
             modal.classList.add("hide")
